@@ -1,0 +1,8 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Contact: Livanh <livanh@protonmail.com>
+Source: https://github.com/livanh/libfm-ffmpeg-columns
+
+Files: *
+Copyright: 2024 Livanh
+License: GPL-3+
+

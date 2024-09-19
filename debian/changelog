@@ -1,3 +1,9 @@
+libfm-column-torrent-name (0.2-1) unstable; urgency=medium
+
+  * Upstream version v0.2
+
+ -- Livanh <livanh@protonmail.com>  Thu, 19 Sep 2024 22:59:38 +0200
+
 libfm-column-torrent-name (0.1-1) unstable; urgency=medium
 
   * Initial release

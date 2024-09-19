@@ -37,6 +37,7 @@ char* get_torrent_name(FmFileInfo *fi)
     char* file_name;
     FILE* file_handle;
     int file_size;
+    const int max_file_size = 102400;
     char *file_content;
     struct bencode ctx[1];
     int result;
@@ -52,6 +53,10 @@ char* get_torrent_name(FmFileInfo *fi)
     }
     fseek(file_handle, 0L, SEEK_END);
     file_size = ftell(file_handle);
+    if (file_size > max_file_size)
+    {
+        file_size = max_file_size;
+    }
     file_content = malloc(file_size);
     if (file_content == NULL)
     {
@@ -83,7 +88,7 @@ char* get_torrent_name(FmFileInfo *fi)
             torrent_name = malloc(ctx->toklen + 1);
             if (torrent_name != NULL)
             {
-                snprintf(torrent_name, ctx->toklen + 1, ctx->tok);
+                snprintf(torrent_name, ctx->toklen + 1, "%s", ctx->tok);
             }
         }
     }
